@@ -19,6 +19,7 @@ class LoginPage extends StatelessWidget {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
+          // Logo Project
           Padding(
             padding: EdgeInsets.only(
               top: 60,
@@ -29,6 +30,8 @@ class LoginPage extends StatelessWidget {
               child: Image(image: AssetImage("assets/login_page/logo.png")),
             ),
           ),
+
+          // Login Form
           Column(
             children: [
               // Input user email
@@ -58,6 +61,8 @@ class LoginPage extends StatelessWidget {
               ),
             ],
           ),
+
+          // Image Footer
           Align(
             alignment: Alignment.bottomCenter,
             child: Image(
