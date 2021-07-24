@@ -26,11 +26,19 @@ Widget button({
       color: Color(0xff207E50),
       child: MaterialButton(
         minWidth: MediaQuery.of(_context).size.width,
-        padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
+        padding: EdgeInsets.fromLTRB(
+          20.0,
+          15.0,
+          20.0,
+          15.0,
+        ),
         onPressed: () {
           Navigator.of(context).pushAndRemoveUntil(
-              MaterialPageRoute(builder: (context) => _page),
-              (Route<dynamic> route) => false);
+            MaterialPageRoute(
+              builder: (context) => _page,
+            ),
+            (Route<dynamic> route) => false,
+          );
         },
         child: Text(
           _label,
