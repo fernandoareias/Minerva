@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:minerva/android/pages/home_page.dart';
+import 'package:minerva/android/pages/location_page.dart';
 import 'package:minerva/android/widgets/login_page/button_widget.dart';
 import 'package:minerva/android/widgets/login_page/input_widget.dart';
 
@@ -52,7 +52,7 @@ class LoginPage extends StatelessWidget {
               // Button
               button(
                 context: context,
-                page: HomePage(),
+                page: LocationPage(),
                 style: TextStyle(
                   fontFamily: 'Montserrat',
                   fontSize: 20.0,
