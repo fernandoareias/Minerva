@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'android/pages/location_page.dart';
+import 'android/pages/login_page.dart';
 
 void main() {
   runApp(MyApp());
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.green,
       ),
       debugShowCheckedModeBanner: false,
-      home: LocationPage(),
+      home: LoginPage(),
     );
   }
 }
