@@ -3,14 +3,16 @@ import 'package:minerva/android/pages/location_page.dart';
 import 'package:minerva/android/widgets/login_page/button_widget.dart';
 import 'package:minerva/android/widgets/login_page/input_widget.dart';
 
-const users = const {'test@test.com': 'test', 'test2@test.com': 'test123'};
-
-class LoginPage extends StatelessWidget {
+class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
 
-  // Simuled delay connection with BD
-  Duration get login_duration => Duration(milliseconds: 2000);
-  TextStyle get style => TextStyle(fontFamily: 'Montserrat', fontSize: 20.0);
+  @override
+  _LoginPageState createState() => _LoginPageState();
+}
+
+class _LoginPageState extends State<LoginPage> {
+  bool _checkbox = false;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -57,10 +59,40 @@ class LoginPage extends StatelessWidget {
 
               // Input user password
               inputWidget(
-                bottom: 20.0,
+                bottom: 5.0,
                 obscureText: true,
                 label: "Password",
                 icon: Icons.lock,
+              ),
+
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  Row(
+                    children: [
+                      Checkbox(
+                        checkColor: Colors.white,
+                        value: _checkbox,
+                        onChanged: (bool? value) {
+                          setState(() {
+                            _checkbox = value!;
+                          });
+                        },
+                      ),
+                      Text("Remember me"),
+                    ],
+                  ),
+                  GestureDetector(
+                    onTap: () {},
+                    child: Text(
+                      "Forgot password ?",
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                ],
               ),
 
               // Button
@@ -73,10 +105,37 @@ class LoginPage extends StatelessWidget {
                 ),
                 label: "Login",
               ),
+
+              GestureDetector(
+                onTap: () {
+                  // => RegPage()
+                },
+                child: Padding(
+                  padding: EdgeInsets.only(
+                    top: 10,
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        "Create your ",
+                      ),
+                      Text(
+                        "Account",
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      Icon(
+                        Icons.arrow_right,
+                      ),
+                    ],
+                  ),
+                ),
+              ),
             ],
           ),
-
-          // Image Footer
         ],
       ),
     );
