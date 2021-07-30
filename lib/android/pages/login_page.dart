@@ -15,6 +15,11 @@ class _LoginPageState extends State<LoginPage> {
 
   @override
   Widget build(BuildContext context) {
+    // Pega o tamanho e largura da tela do celular
+    var screenSize = MediaQuery.of(context).size;
+    var _height = screenSize.height;
+    var _width = screenSize.width;
+
     return Scaffold(
       resizeToAvoidBottomInset: false,
       backgroundColor: Color(0xFFA2E7B6),
@@ -32,11 +37,11 @@ class _LoginPageState extends State<LoginPage> {
             alignment: Alignment.topCenter,
             child: Padding(
               padding: EdgeInsets.only(
-                top: 60,
+                top: _height * .09,
               ),
               child: Container(
-                width: 90,
-                height: 90,
+                width: _width * .25,
+                height: _height * .12,
                 child: Image(image: AssetImage("assets/login_page/logo.png")),
               ),
             ),
@@ -47,19 +52,19 @@ class _LoginPageState extends State<LoginPage> {
             children: [
               Padding(
                 padding: EdgeInsets.only(
-                  top: 180,
+                  top: _height * .25,
                 ),
               ),
               // Input user email
               inputWidget(
-                bottom: 20.0,
+                bottom: _height * .02,
                 label: "Email ID",
                 icon: Icons.email,
               ),
 
               // Input user password
               inputWidget(
-                bottom: 5.0,
+                bottom: _height * .01,
                 obscureText: true,
                 label: "Password",
                 icon: Icons.lock,
@@ -108,11 +113,11 @@ class _LoginPageState extends State<LoginPage> {
 
               GestureDetector(
                 onTap: () {
-                  // => RegPage()
+                  print(_height);
                 },
                 child: Padding(
                   padding: EdgeInsets.only(
-                    top: 10,
+                    top: _height * .015,
                   ),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
